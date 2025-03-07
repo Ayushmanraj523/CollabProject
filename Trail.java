@@ -6,7 +6,7 @@ public class Trail {
         System.out.println("Hello, Everyone! i am function");
     }
     Trail(){
-        System.out.println("hey everyone i am constructor");
+        System.out.println("hey everyone i am contructor");
     }
 
     public static void main(String[] args) {
@@ -21,5 +21,7 @@ public class Trail {
 
     
         System.out.println("Hello, Everyone!");
+        System.out.println("Hello Guys !");
+        System.out.println("Hello I am sahil");
     }
 }
