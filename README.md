@@ -1,4 +1,7 @@
-# CollabProject Banking System (Basic Console Version - Core Java)
+# CollabProject Banking System (Basic Console Version - Core Java)  AVOID CHAT GPT
+
+:- Discalmer :(AVOID CHATGPT copy & paste)
+
 Features:
 step 1: 
 
