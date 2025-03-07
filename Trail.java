@@ -1,6 +1,4 @@
-Trial
-
-public class HelloWorld {
+public class Trail {
     public static void main(String[] args) {
         System.out.println("Hello, Everyone!");
     }
