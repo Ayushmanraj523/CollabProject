@@ -1,6 +1,15 @@
-# CollabProject
-no idea
-hey i am ayushman
-hey ,i am sahil
-Hello , myself Sahil Sumbrui.
-Hey, Durga Shankar here 
+# CollabProject Banking System (Basic Console Version - Core Java)
+Features:
+step 1: 
+
+User Login
+Check Balance
+Deposit Money
+Withdraw Money
+Transaction History
+step 2:
+
+ GUI Version (Swing + AWT)
+
+
+
