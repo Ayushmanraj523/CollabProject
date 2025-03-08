@@ -16,7 +16,7 @@ class BankingSystem {
         
     }
     // user ka pin sahi ho isiliye verification
-    boolean authentication(int enterpin){
+    public boolean authentication(int enterpin){
         
         return this.pin == enterpin;
      }
