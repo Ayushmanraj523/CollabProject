@@ -36,7 +36,7 @@ class BankingSystem {
     public void withdraw(double amount){
         if(amount <= balance){
             balance -= amount;
-            System.out.println("Withdrawal Successfull\n" + "Remaining Balance" + balance);
+            System.out.println("Withdrawal Successfull/n" + "Remaining Balance" + balance);
         }
         else{
             System.out.println("Insufficient Balance !");
@@ -76,7 +76,7 @@ public class ATM {
         }
         // aur agar 3 attempts me ek bhi match na kare toh too many attempts ka message show karega 
         if(!authenticate){
-            System.out.println(" Too Many Attempts! Please come after 24 hours\n"+"(24 ghante ke liye shakal mat dikhana)");
+            System.out.println(" Too Many Attempts! Please come after 24 hours/n"+"(24 ghante ke liye shakal mat dikhana)");
             sc.close();
             return;
         }
@@ -104,7 +104,7 @@ public class ATM {
                 case 3:
                 System.out.println("Enter teh amount to Withdraw: ");
                 double withdrawAmount= sc.nextDouble();
-                bs.Withdraw(withdrawAmount);
+                bs.withdraw(withdrawAmount);
                     break;
                 default:
                 System.out.println("Invalid ooption ! Please choose a valid option");
