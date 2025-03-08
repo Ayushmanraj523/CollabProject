@@ -84,7 +84,7 @@ public class ATM {
         while(true){
             /*agar user correct userpin dalta hai to interface me ye options aaenge abhi tak ke liye
              * Options humlog aur bhi bada skte hain*/
-            System.out.println("Wellcome Dear user. Choose an option");
+            System.out.println("Welcome Dear user. Choose an option");
             System.out.println("1. Check Balance");
             System.out.println("2. Money Deposit");
             System.out.println("3. Withdraw");
@@ -102,12 +102,12 @@ public class ATM {
                 bs.deposit(depositAmount);
                 break;
                 case 3:
-                System.out.println("Enter teh amount to Withdraw: ");
+                System.out.println("Enter the amount to Withdraw: ");
                 double withdrawAmount= sc.nextDouble();
                 bs.Withdraw(withdrawAmount);
                     break;
                 default:
-                System.out.println("Invalid ooption ! Please choose a valid option");
+                System.out.println("Invalid option ! Please choose a valid option");
             }
         }
     }    
