@@ -1,4 +1,4 @@
-package ATM;
+package ATM_Machine;
 import java.util.Scanner;
 
 class BankingSystem {
@@ -16,7 +16,7 @@ class BankingSystem {
         
     }
     // user ka pin sahi ho isiliye verification
-    public boolean authentication(int enterpin){
+    boolean authentication(int enterpin){
         
         return this.pin == enterpin;
      }
