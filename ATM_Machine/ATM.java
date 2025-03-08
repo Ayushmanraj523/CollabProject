@@ -27,6 +27,7 @@ class BankingSystem {
                System.out.println("desposit succesfully" + balance);
            }
         else {
+
         
             System.out.println("Invalid ammount");
         }
@@ -63,7 +64,7 @@ public class ATM {
         // yaha pe while loop lagaye hai taaki 3 attempt se jyada naaa jaye 
         // aur tumhare entered pin ko original pin se match karke dekhe 
         while(attempt < 3){
-            System.out.print(" Enter your pin");
+            System.out.print(" Enter your pin = ");
             int StorePin= sc.nextInt();
             if (bs.authentication(StorePin)){
                 authenticate = true;
@@ -71,7 +72,7 @@ public class ATM {
                 // agar attempts match na kare toh incorrect pin show karega 
             }else{
                 attempt++;
-                System.out.println("Incorrect Pin" + (3 - attempt));
+                System.out.println("Incorrect Pin = " + (3 - attempt));
             }
         }
         // aur agar 3 attempts me ek bhi match na kare toh too many attempts ka message show karega 
@@ -84,30 +85,36 @@ public class ATM {
         while(true){
             /*agar user correct userpin dalta hai to interface me ye options aaenge abhi tak ke liye
              * Options humlog aur bhi bada skte hain*/
-            System.out.println("Welcome Dear user. Choose an option");
+            System.out.println("Wellcome Dear user. Choose an option");
             System.out.println("1. Check Balance");
             System.out.println("2. Money Deposit");
             System.out.println("3. Withdraw");
+            System.out.println("4. EXIT");
             System.out.print("Select any option:");
             int Choice= sc.nextInt();
 
             //switch case
-            switch(Choice){
+            switch (Choice){
                 case 1:
                 System.out.println("Your Current Balance: "+bs.CheckBalance());
-                break;
+                return;
                 case 2:
                 System.out.println("Enter the amount to be deposited: ");
                 double depositAmount= sc.nextDouble();
                 bs.deposit(depositAmount);
-                break;
+                return;
                 case 3:
-                System.out.println("Enter the amount to Withdraw: ");
+                System.out.println("Enter teh amount to Withdraw: ");
                 double withdrawAmount= sc.nextDouble();
                 bs.withdraw(withdrawAmount);
-                    break;
+                return;
+                case 4:
+                System.out.print(" Exit");
+                sc.close();
+                return;   
                 default:
-                System.out.println("Invalid option ! Please choose a valid option");
+                System.out.println("Invalid ooption ! Please choose a valid option");
+                
             }
         }
     }    
