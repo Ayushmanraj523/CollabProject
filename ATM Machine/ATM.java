@@ -10,22 +10,17 @@ class BankingSystem {
     // Constructor banaye taki object me argument pass kre to chale 
     //Contructer obj bante hi value put ho jayegi bina function ko call kiye 
     // For real World example Bank account kholte hi Amount or pin Rakhini padti pehle waise 
-    BankingSystem(int initial balnce, int userpin){
-        this.balance = initial balnce;
+    BankingSystem(int initial balance, int userpin){
+        this.balance = initial balance;
          this.pin = userpin;
         
     }
     // user ka pin sahi ho isiliye verification
-    public boolean attontication(int enterpin){
+    public boolean authentication(int enterpin){
         
-        if(this.pin == enterpin){
-            System.out.println("Correct Pin");    
-        }
-        else {
-            System.out.println("Invalid Pin");
-        }
+        return this.pin == enterpin;
      }
-    // money deposite
+    // money deposit
     public void deposit(double amount) {
            if(amount > 0) {
                balance += amount;
@@ -33,7 +28,7 @@ class BankingSystem {
            }
         else {
         
-            System.out,println("Invalid ammount");
+            System.out.println("Invalid ammount");
         }
     }
 
@@ -46,7 +41,7 @@ class BankingSystem {
 
         // Balance Check
     public void CheckBalance() {
-        System.out. println(" balance amount"+ balance);
+        System.out.println(" balance amount"+ balance);
     }  
 }
 
@@ -62,4 +57,25 @@ public class ATM {
         int attempt = 0;
         // ye boolean isiliye taaki first authenicate false ho user input correct daale tb hitrue ho wo loop break kre 
         boolean authenticate = false;
+        // yaha pe while loop lagaye hai taaki 3 attempt se jyada naaa jaye 
+        // aur tumhare entered pin ko original pin se match karke dekhe 
+        while(attempt < 3){
+            System.out.print(" Enter your pin");
+            int StorePin= sc.nextInt();
+            if (bs.authenticate(StorePin)){
+                authenticate = true;
+                break;
+                // agar attempts match na kare toh incorrect pin show karega 
+            }else{
+                attempt++;
+                System.out.println("Incorrect Pin" + (3 - attempt));
+            }
+        }
+        // aur agar 3 attempts me ek bhi match na kare toh too many attempts ka message show karega 
+        if(!authenticate){
+            System.out.println(" Too Many Attempts! Please come after 24 hours\n"+"(24 ghante ke liye shakal mat dikhana)");
+            scanner.close();
+            return;
+        }
+        
 }}
