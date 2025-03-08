@@ -97,17 +97,19 @@ public class ATM {
                 System.out.println("Your Current Balance: "+bs.CheckBalance());
                 break;
                 case 2:
-                System.out.println("Enter teh amount to be diposited: ");
+                System.out.println("Enter the amount to be deposited: ");
                 double depositAmount= sc.nextDouble();
                 bs.deposit(depositAmount);
                 break;
                 case 3:
-                System.out.println("Enter teh amount to Withddraw: ");
+                System.out.println("Enter teh amount to Withdraw: ");
                 double withdrawAmount= sc.nextDouble();
                 bs.Withdraw(withdrawAmount);
                 default:
                 System.out.println("Invalid ooption ! Please choose a valid option");
             }
         }
-        
-}}
+    }    
+}
+
+
