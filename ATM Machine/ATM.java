@@ -1,4 +1,4 @@
-package ATM Machine;
+package ATM;
 
 
 class BankingSystem {
@@ -40,8 +40,8 @@ class BankingSystem {
         }
 
         // Balance Check
-    public void CheckBalance() {
-        System.out.println(" balance amount"+ balance);
+    public double CheckBalance() {
+        return balance;
     }  
 }
 
@@ -62,7 +62,7 @@ public class ATM {
         while(attempt < 3){
             System.out.print(" Enter your pin");
             int StorePin= sc.nextInt();
-            if (bs.authenticate(StorePin)){
+            if (bs.authentication(StorePin)){
                 authenticate = true;
                 break;
                 // agar attempts match na kare toh incorrect pin show karega 
@@ -74,7 +74,7 @@ public class ATM {
         // aur agar 3 attempts me ek bhi match na kare toh too many attempts ka message show karega 
         if(!authenticate){
             System.out.println(" Too Many Attempts! Please come after 24 hours\n"+"(24 ghante ke liye shakal mat dikhana)");
-            scanner.close();
+            sc.close();
             return;
         }
         
