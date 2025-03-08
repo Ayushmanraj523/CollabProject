@@ -1,4 +1,4 @@
-package ATM_Machine;
+
 import java.util.Scanner;
 
 class BankingSystem {
@@ -24,7 +24,7 @@ class BankingSystem {
     public void deposit(double amount) {
            if(amount > 0) {
                balance += amount;
-               System.out.println("desposit succesfully" + balance);
+               System.out.println("desposited succesfully. Total Amount: " + balance);
            }
         else {
 
@@ -37,7 +37,7 @@ class BankingSystem {
     public void withdraw(double amount){
         if(amount <= balance){
             balance -= amount;
-            System.out.println("Withdrawal Successfull/n" + "Remaining Balance" + balance);
+            System.out.println("Withdrawal Successfull\n" + "Remaining Balance : " + balance);
         }
         else{
             System.out.println("Insufficient Balance !");
@@ -72,12 +72,12 @@ public class ATM {
                 // agar attempts match na kare toh incorrect pin show karega 
             }else{
                 attempt++;
-                System.out.println("Incorrect Pin = " + (3 - attempt));
+                System.out.println("Incorrect Pin : " + (3 - attempt + " attempts left "));
             }
         }
         // aur agar 3 attempts me ek bhi match na kare toh too many attempts ka message show karega 
         if(!authenticate){
-            System.out.println(" Too Many Attempts! Please come after 24 hours/n"+"(24 ghante ke liye shakal mat dikhana)");
+            System.out.println(" Too Many Attempts! Please come after 24 hours\n"+"(24 ghante ke liye shakal mat dikhana)");
             sc.close();
             return;
         }
@@ -104,16 +104,16 @@ public class ATM {
                 bs.deposit(depositAmount);
                 return;
                 case 3:
-                System.out.println("Enter teh amount to Withdraw: ");
+                System.out.println("Enter the amount to Withdraw: ");
                 double withdrawAmount= sc.nextDouble();
                 bs.withdraw(withdrawAmount);
                 return;
                 case 4:
-                System.out.print(" Exit");
+                System.out.print(" Thank You for using our ATM. ");
                 sc.close();
                 return;   
                 default:
-                System.out.println("Invalid ooption ! Please choose a valid option");
+                System.out.println("Invalid option ! Please choose a valid option");
                 
             }
         }
