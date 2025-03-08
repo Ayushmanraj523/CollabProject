@@ -1,5 +1,5 @@
 package ATM;
-
+import java.util.Scanner;
 
 class BankingSystem {
     
@@ -33,7 +33,7 @@ class BankingSystem {
     }
 
     // money withdraw
-    public void Withdraw(double amount){
+    public void withdraw(double amount){
         if(amount <= balance){
             balance -= amount;
             System.out.println("Withdrawal Successfull\n" + "Remaining Balance" + balance);
@@ -105,6 +105,7 @@ public class ATM {
                 System.out.println("Enter teh amount to Withdraw: ");
                 double withdrawAmount= sc.nextDouble();
                 bs.Withdraw(withdrawAmount);
+                    break;
                 default:
                 System.out.println("Invalid ooption ! Please choose a valid option");
             }
