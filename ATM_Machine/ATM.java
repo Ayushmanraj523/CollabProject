@@ -59,7 +59,7 @@ public class ATM {
         // 3 se jada attmpt na ho isiliye ek variable 
         int attempt = 0;
         // ye boolean isiliye taaki first authenicate false ho user input correct daale tb hitrue ho wo loop break kre 
-        boolean authenticate = false;
+        public boolean authenticate = false;
         // yaha pe while loop lagaye hai taaki 3 attempt se jyada naaa jaye 
         // aur tumhare entered pin ko original pin se match karke dekhe 
         while(attempt < 3){
