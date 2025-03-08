@@ -10,8 +10,8 @@ class BankingSystem {
     // Constructor banaye taki object me argument pass kre to chale 
     //Contructer obj bante hi value put ho jayegi bina function ko call kiye 
     // For real World example Bank account kholte hi Amount or pin Rakhini padti pehle waise 
-    BankingSystem(int initial balance, int userpin){
-        this.balance = initial balance;
+    BankingSystem(int initialbalance, int userpin){
+        this.balance = initialbalance;
          this.pin = userpin;
         
     }
@@ -33,13 +33,16 @@ class BankingSystem {
     }
 
     // money withdraw
-    public void Withdraw(double amount) {
+    public void Withdraw(double amount){
         if(amount <= balance){
             balance -= amount;
             System.out.println("Withdrawal Successfull\n" + "Remaining Balance" + balance);
         }
-
-        // Balance Check
+        else{
+            System.out.println("Insufficient Balance !");
+        }
+    }
+    // Balance Check
     public double CheckBalance() {
         return balance;
     }  
@@ -76,6 +79,35 @@ public class ATM {
             System.out.println(" Too Many Attempts! Please come after 24 hours\n"+"(24 ghante ke liye shakal mat dikhana)");
             sc.close();
             return;
+        }
+        // Agar user sahi pin enter kare
+        while(true){
+            /*agar user correct userpin dalta hai to interface me ye options aaenge abhi tak ke liye
+             * Options humlog aur bhi bada skte hain*/
+            System.out.println("Wellcome Dear user. Choose an option");
+            System.out.println("1. Check Balance");
+            System.out.println("2. Money Deposit");
+            System.out.println("3. Withdraw");
+            System.out.print("Select any option:");
+            int Choice= sc.nextInt();
+
+            //switch case
+            switch(Choice){
+                case 1:
+                System.out.println("Your Current Balance: "+bs.CheckBalance());
+                break;
+                case 2:
+                System.out.println("Enter teh amount to be diposited: ");
+                double depositAmount= sc.nextDouble();
+                bs.deposit(depositAmount);
+                break;
+                case 3:
+                System.out.println("Enter teh amount to Withddraw: ");
+                double withdrawAmount= sc.nextDouble();
+                bs.Withdraw(withdrawAmount);
+                default:
+                System.out.println("Invalid ooption ! Please choose a valid option");
+            }
         }
         
 }}
